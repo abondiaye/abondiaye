@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livre 3D</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.9.2/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.9.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+
+    
+
+
+</head>
+<body>
+    <div class='book'>  
+        <div id='page-1' class='page no-anim'>    
+          <div class='side-1' id='p1'>
+            <div class='content'>
+              <h1 class="dynamic-title">Portefolio</h1> 
+              <h2>
+                Abdoulaye N'DIAYE
+             </h2>
+              <p>
+                Web Developeur & Technicien I-T
+             </p>             
+              <img src="./img/profile.png"/>
+              
+            
+            <div class="social-media">
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="#"><i class='bx bxl-twitter' ></i></a>
+                <a href="#"><i class='bx bxl-github' ></i></a>
+                <a href="#"><i class='bx bxl-linkedin' ></i>
+              </a>
+
+              <button id="nouveau-bouton">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 11">
+                </svg>
+                <span class="button-text">Curriculum-vitae</span>
+            </button>
+            
+            <button id="button" class="ready" onclick="clickButton();">
+                <div class="message submitMessage">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 12.2">
+                    </svg> <span class="button-text"></span>
+                </div>
+                <div class="message loadingMessage">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 17">
+                        <circle class="loadingCircle" cx="2.2" cy="10" r="1.6"/>
+                        <circle class="loadingCircle" cx="9.5" cy="10" r="1.6"/>
+                        <circle class="loadingCircle" cx="16.8" cy="10" r="1.6"/>
+                    </svg>
+                </div>
+                
+                <div class="message successMessage">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 11">
+                        <polyline stroke="currentColor" points="1.4,5.8 5.1,9.5 11.6,2.1 "/>
+                    </svg> <span class="button-text">Curriculum-vitae</span>
+                </div>
+            </button>
+            
+              <button id="contact-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 11">
+                </svg>
+                <span class="button-text">Curriculum-vitae</span>
+            </button>
+            
+            <button id="button" class="ready" onclick="clickButton();">
+                <div class="message submitMessage">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 12.2">
+                    </svg> <span class="button-text"></span>
+                </div>
+                <div class="message loadingMessage">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 17">
+                        <circle class="loadingCircle" cx="2.2" cy="10" r="1.6"/>
+                        <circle class="loadingCircle" cx="9.5" cy="10" r="1.6"/>
+                        <circle class="loadingCircle" cx="16.8" cy="10" r="1.6"/>
+                    </svg>
+                </div>
+                
+                <div class="message successMessage">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 11">
+                        <polyline stroke="currentColor" points="1.4,5.8 5.1,9.5 11.6,2.1 "/>
+                    </svg> <span class="button-text">Curriculum-vitae</span>
+                </div>
+            </button>
+            
+                 
+
+            </div>
+            </div><!-- .content -->
+          </div><!-- .side-1 -->
+          <body class="curriculum-section custom-body">
+            <div class='side-2' id='p2'>      
+            <div class='content'>
+                <section class="heading">
+                    <h1>Curriculum Vitae</h1>
+                    <div class="profile"></div>
+                    <div class="name">
+                      <ul>
+                        <h3>À Propos de moi</h3>
+                        <hr></hr>
+
+                      </ul>
+                      <p>Après avoir passé cinq années enrichissantes en tant que technicien IT, j'ai décidé de poursuivre ma passion pour la technologie en me formant au développement web. J'ai récemment complété une formation intensive en développement web full stack, qui m'a permis d'acquérir des compétences en front-end et back-end</p>
+                    </div>
+                    <div class="social">
+                      <ul>
+                        
+                      </ul>
+                      <div id="experience">
+                                                
+
+                        <h3 class="titre"><img class="" src="./img/moimage.JPG" /></h3>
+
+                        
+                          <div id="competence">
+                            <h3 class="titre">
+                                <h3>"Compétences"</h3>
+                            </h3>
+                            <hr>
+                            <ul class="ul_comp">
+                                <li class="comp"data-niveau="5"><i class='bx bxl-html5'></i> HTML 5 <div class="niveau_5"></div></li>
+                                <li class="comp"data-niveau="4"><i class='bx bxl-vuejs'></i> CSS3 <div class="niveau_4"></div></li>
+                                <li class="comp"data-niveau="3"><i class='bx bxl-php'></i> PHP <div class="niveau_5"></div></li>
+                                <li class="comp"data-niveau="2"><i class='bx bxl-docker'></i> Docker <div class="niveau_4"></div></li>
+                                <li class="comp"data-niveau="4"><i class="fa-brands fa-symfony"></i> Symfony <div class="niveau_3"></div></li>
+                                <li class="comp"data-niveau="4"><i class='bx bxl-javascript'></i> JavaScript <div class="niveau_4"></div></li>
+                                <li class="comp"data-niveau="4"><i class='bx bxl-vuejs'></i> Vue.js <div class="niveau_4"></div></li>
+                            </ul>
+                        </div>
+                        
+                        <div id="experience">
+                          <h3 class="titre1">Expériences professionnelles</h3>                          
+                          <div id="seton">
+                              <img style="margin-top: 16px;" class="img_experience" src="./img/codeHtml.png" />
+                              <span class="sous_titre">Depuis d&eacute;but 2022 <strong>D&eacute;veloppement Web</strong> Ecole CCI , &agrave; </span>
+                              <p style="margin-top: 7px;">R&eacute;alisation de la boutique web dans le respect des maquettes fournies par le p&ocirc;le graphisme.<br />
+                              Int&eacute;grations valides W3C en HTML5 et CSS3 pour la r&eacute;alisation d'une boutique en ligne. VUEJS et Symfony<br />
+                        Mise en place de la stat&eacute;gie de responsive web design pour un acc&egrave;s lisible sur tous les supports (mobiles et tablettes).</p>
+                              <p class="voir"><a href="http://seton.fr" target="_BLANK"><strong>Voir...</strong></a></p>
+                          </div>
+                  
+                          <div id="mine_a">
+                              <img class="img_experience" src="./img/Bureau.png" />
+                              <span class="sous_titre">2018 B.A.C Technicien Assistance Informatique<strong>AFPA</strong> à Villete D'Anton</span><br />
+                              <p style="margin-top: 7px;">Montage, démontage de pc bureautique et portable, ainsi que l'apprentissage de certain logiciel et compréhension des bais </p>
+                              <p class="voir"><a href="http://mine-a.pusku.com" target="_BLANK"><strong>Voir...</strong></a></p>
+                          </div>
+                  
+                         
+                  
+                          <div id="blanche_porte">
+                              <img class="img_experience" src="./img/RéparationMobile.png" />
+                              <span class="sous_titre">2017 Réparation et ventes Accessoires <strong> mobiles et imprimentes</strong> chez la "Blanche Porte", &agrave; Tourcoing.</span><br />
+                              <p style="margin-top: 7px;">Mise en place d'une application interne permettant aux employ&eacute;s de g&eacute;rer leur planing et travail.</p>
+                        <p class="voir"><a href="http://blancheporte.hackidevice.com/" target="_BLANK"><strong>Voir...</strong></a></p>
+                          </div>
+                  
+                          <div id="hid">
+                              <img class="img_experience" src="./img/Lyonphone.png" />
+                              <span class="sous_titre">2016 Cr&eacute;ation du <strong>vente et reparation mobiles; pour mobiles et imprimentes</strong> &agrave; Lyon Guillotiére</span><br />
+                              <p style="margin-top: 7px;">  Mes prémiere debut de réglage Mobiles et Pc.</p>
+                              <p class="voir"><a href="http://hackidevice.com" target="_BLANK"><strong>Voir...</strong></a></p>
+                          </div>
+                      </div>
+                      <div id="formation">
+                        <h3 class="titre2"><img class="img_titre" src="img/tcl.png" />Formations et dipl&ocirc;mes</h3>
+                        <div id="polytechnique">
+                            <span class="sous_titre">2022-2023 <br /><strong>BTS Developeur web Full stack<span class="sous_titre"><strong>Limas</strong></span><br /> </strong></span><br />
+                            <span class="sous_titre">2017-2018 <br /><strong>B.A.C Technicien Assistance Informatique </strong> &agrave; AFPA</span><br />
+                            <span class="sous_titre">2012-2013 <br /> <strong>CAP Agent d'aceuil et conduite routière </strong> &agrave; villet d'anton.</span><br />
+                            <span class="sous_titre">2003-2004 <br /><strong>Mention Complémentaire Traiteur </strong> &agrave; Hélène Boucher</span><br />
+                            <span class="sous_titre">2001-2002 <br /><strong>CAP Hotelerie Restauration </strong> &agrave; Hélène Boucher</span><br />
+
+                            <p style="margin-top: 7px;">  bonheur qui  apport&eacute; </p>
+                        </div>
+                        <p>Et maintenant ces des passion tellement grande que je ne peux m'arr&ecirc;ter de coder.</p>
+
+                    </div>
+                <h3>centre interet</h3>
+                    <div id="interet">
+                        <ul class="ul_interet">
+                            </li>
+                            <li><span class="sous_titre"><img class="img_interet" src="./img/iNBA-removebg-preview.png"></span>
+                            <p>J'aime, J'aimer et j'aimerai.</p>
+                            </li>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="contact">
+                      <h3>Contact</h3>
+                      <hr></hr>
+                      <div class="contact-container">
+                          <div class="form-container">
+                              <form method="post">
+                                  <input type="text" name="nom" placeholder="Votre nom" /><br />
+                                  <input type="email" name="mail" placeholder="Votre email" /><br />
+                                  <textarea name="message" placeholder="Votre message"></textarea><br />
+                                  <input type="submit" value="Envoyer" />
+                              </form>
+                          </div>
+                          <div class="success-message" style="display: none;">
+                            Merci pour votre message! Nous vous répondrons dès que possible.
+                        </div>
+                          <div class="address-container">
+                              <ul class="ul_contact">
+                                  <li>
+                                      135 Cours Gambetta <br />
+                                      69003 Lyon
+                                  </li>
+                                  <li>
+                                      <iframe width="372" height="164" class="iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.fr/maps?q=135+Cours+Gambetta,+69003+Lyon&amp;ie=UTF8&amp;hq=&amp;hnear=135+Cours+Gambetta,+69003+Lyon&amp;t=m&amp;z=14&amp;ll=45.762974,4.841070&amp;output=embed"></iframe>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                  
+                        
+                  </section>
+                  
+              
+            </div><!-- .content -->
+          </div><!-- .side-2 -->
+        </div><!-- .page -->
+        
+        <div id='page-2' class='page no-anim'>    
+          <div class='side-1' id='p3'>
+            <div class='content'>
+              <h2>Mes Connaissance</h2>
+              <!-- Cards Section -->
+<div class="card-deck">
+  <!-- Card 1 -->
+  <div class="card">
+      <img src="./img/php3.png" class="card-img-top" alt="Image 1">
+      <div class="card-body">
+          <h5 class="card-title">Titre de la carte 1</h5>
+          <p class="card-text">Texte de la carte 1.</p>
+      </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+      <img src="./img/vueJS.png" class="card-img-top" alt="Image 2">
+      <div class="card-body">
+          <h5 class="card-title">Titre de la carte 2</h5>
+          <p class="card-text">Texte de la carte 2.</p>
+      </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+      <img src="./img/Symfony5.png" class="card-img-top" alt="Image 3">
+      <div class="card-body">
+          <h5 class="card-title">Titre de la carte 3</h5>
+          <p class="card-text">Texte de la carte 3.</p>
+      </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card">
+      <img src="./img/dock.png" class="card-img-top" alt="Image 4">
+      <div class="card-body">
+          <h5 class="card-title">Titre de la carte 4</h5>
+          <p class="card-text">Texte de la carte 4.</p>
+      </div>
+  </div>
+</div>
+<!-- End Cards Section -->
+
+              <p>
+      The Shrine of Daring is found in the city of Vivec, in the Temple District, along the western wall of the High Fane, the great Temple of Vvardenfell. When you address the shrine, it is customary to leave behind a Potion of Rising Force. Suitable potions may be purchased from the Temple. Homemade potions are not acceptable.
+                </p>
+                .gallery
+	.resizer RESIZE SCREEN
+	.items
+		- for (i=0; i<36; i++)
+				.item
+	.pagination
+            </div>
+            <!-- .content -->
+          </div><!-- .side-1 -->    
+          <div class='side-2' id='p4'>      
+            <div class='content'>
+              <h2>The Palace: Shrine of Generosity</h2>
+              <p>
+                Long after Lord Nerevar and the Tribunal triumphed over Dagoth Ur, the people wished to build a monument to the heroes of that war. Vivec thanked them, but said that it would be better to dedicate a monument not only to the glorious heroes, but to all people, great and small, who suffered and died in the war. It became the custom to make offerings here, either in thanks of our good fortune, or for those less fortunate.
+              </p>
+              <p>
+      The Shrine of Generosity is on the top steps of Vivec's Palace, the southernmost Canton of Vivec City. The customary donation for those in good fortune is 100 gold.
+              </p>
+            </div><!-- .content -->
+          </div><!-- .side-2 -->
+        </div><!-- #page-2 -->
+        
+        <div id='page-3' class='page no-anim'>    
+          <div class='side-1' id='p5'>
+            <div class='content'>
+              <h2>The Puzzle Canal: The Shrine of Courtesy</h2>
+              <p>
+                In a battle with Mehrunes Dagon, Vivec gave his own silver longsword to the Daedra Lord rather than dishonor himself by fighting an unarmed foe. This so impressed the Dremora, the most honorable and chivalrous of Mehrunes Dagon's Daedric servants, that they now share a bond of respect and courtesy with the followers of the Tribunal, though we must never forget that they are our enemies.
+              </p>
+              <p>
+                The Shrine of Courtesy is found in the heart of the Puzzle Canal, a labyrinth beneath Lord Vivec's Palace in the city of Vivec. The journey though the Puzzle Canal can be confusing and it is suggested that common pilgrims carry a scroll of ALMSIVI Intervention in case they get lost. The Dremora Krazzt is found in the center of the Puzzle Canal, and will accept a plain silver longsword if spoken to with courtesy. After Krazzt accepts the sword, pilgrims must read the inscription on the triolith.
+              </p>
+            </div><!-- .content -->
+          </div><!-- .side-1 -->    
+          <div class='side-2' id='p6'>      
+            <div class='content'>
+              <h2>The Mask of Vivec: Shrine of Justice</h2> 
+              <p>
+                Near the altar is Vivec's Ash Mask. In the Days of Fire when Dagoth Ur first crept back into Red Mountain and awakened it, Vivec led refugees here as they fled the ash and blight. Weary, they rested here a while. When Vivec awoke, he found himself and all his followers encased in casts of grey ash. Frozen like a sleeping statue and unable to free himself or help his people, Vivec was filled with despair. Vivec's tears weakened his ash cast. He tore the ash from his perished followers, breathed life into their lungs, and cured them of the blight. This is Vivec's heroism -- his tender heart provides strength when his might fails.
+              </p>
+              <p>
+      The Shrine of Justice is guarded within the Gnisis Temple, in the village of Gnisis, northwest by road from the town of Ald'ruhn. When you address the shrine, it is customary to leave a potion of Cure Common Disease as a token of your respect for justice. Suitable potions may be purchased from Temple. Homemade potions are not acceptable.
+              </p>
+            </div><!-- .content -->
+          </div><!-- .side-2 -->
+        </div><!-- #page-3 -->
+        
+        <div id='page-4' class='page no-anim'>    
+          <div class='side-1' id='p7'>
+            <div class='content'>
+              <h2>Koal Cave: The Shrine of Valor</h2>
+              <p>
+                Within the Koal Cave, Vivec fought a battle with Ruddy Man, the father of the Dreugh. When he defeated Ruddy Man, Vivec spared his life, on the condition that Ruddy Man and his children would give up their tough hides to serve as armor for the Dunmer.
+              </p>
+              <p>
+                The Shrine of Valor is inside the Koal Cave, a cavern on the seacoast west of the ancient stronghold Berandas and south of Gnisis. The cave mouth faces south, towards the sea, and is marked by a large natural arch of stone. The region is wilderness, and finding the cave mouth can be difficult. Dreugh within the cave itself are fearsome enemies; only experienced and capable adventurers should attempt to re-enact the epic battle with the dreugh in the cave. Dreugh wax may be bought at the Temple in Gnisis. When you address the shrine, it is customary to leave a portion of dreugh wax as a token of Vivec's victorious struggle with Ruddy Man.
+              </p>
+            </div><!-- .content -->
+          </div><!-- .side-1 -->    
+          <div class='side-2' id='p8'>      
+            <div class='content'>
+              <h2>Mes Remerciements</h2>
+              <p>
+                Je tiens à exprimer mes sincères remerciements à la Chambre de Commerce et d'Industrie (CCI) ainsi qu'au Centre de Formation Professionnelle des Adultes (AFPA) pour leur soutien inestimable tout au long de mon parcours. Leur engagement et leur expertise ont joué un rôle crucial dans mon développement professionnel, en m'offrant des opportunités d'apprentissage exceptionnelles.
+
+                La CCI a été un partenaire essentiel, fournissant des ressources précieuses, des conseils stratégiques et un environnement propice à l'acquisition de compétences professionnelles. Leur dévouement envers le développement des entreprises et des individus a eu un impact significatif sur ma croissance personnelle et ma compréhension du monde des affaires.
+                
+                Mes plus sincères remerciements vont également au Centre AFPA, dont le programme de formation exceptionnel m'a permis d'acquérir des compétences spécifiques et pertinentes pour mon domaine d'expertise. Les formateurs dévoués et les installations de pointe ont créé un environnement d'apprentissage stimulant, me préparant de manière exhaustive pour les défis du monde professionnel.
+                
+                Ces remerciements ne sont qu'une petite expression de ma gratitude envers la CCI et l'AFPA. Leur impact sur ma carrière et ma vie ne sera jamais sous-estimé. Merci pour leur soutien continu, leur encouragement et leur engagement envers l'éducation et la formation professionnelle.
+                              </p>
+              <p>
+      The Shrine of Pride is found within the Ghostfence, just northeast of the Ghostgate itself. The safest route to Ghostgate is along the Foyada Mamaea, a volcanic ravine running from the top of Red Mountain southwest to its end just below Balmora. An old Dwemer bridge crosses the foyada near Fort Moonmoth. A pilgrim may follow the Foyada Mamaea all the way to Ghostgate. Any journey inside the Ghostfence is dangerous, but even the most timid pilgrim should be safe, so long as he does not stray too far from the Ghostgate and flees from any minions of Dagoth Ur. When you address the shrine, it is customary to leave a soul gem in remembrance of our ancestors who were bound to the Tribunal's service.
+              </p>
+            </div><!-- .content -->
+          </div><!-- .side-2 -->
+        </div><!-- #page-4 -->
+      </div>
+</body>
+<script>
+   $(document).ready(function () {
+            // Ajoutez une animation lors de la soumission du formulaire
+            $('form').submit(function (e) {
+                e.preventDefault();
+                // Vous pouvez personnaliser l'animation ici, par exemple, utiliser fadeIn() ou slideDown()
+                $('.contact-container').fadeOut(500, function () {
+                    $('.success-message').fadeIn(500);
+                });
+            });
+        });
+    $(document).ready(function () {
+        document.getElementById('contact-btn').addEventListener('click', function() {
+            document.getElementById('p8').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        $('.page').click(function() {
+            $(this).removeClass('no-anim').toggleClass('flipped');
+            $('.page > div').click(function(e) {
+                e.stopPropagation();
+            });
+            reorder();
+        });
+
+        $('.items .item').each(function (index, element) {
+            gsap.from(element, {
+                opacity: 0,
+                y: 50,
+                duration: 0.8,
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top bottom-=50',
+                    toggleActions: 'play none none reset',
+                },
+            });
+        });
+
+        function reorder() {
+            $(".book").each(function(){
+                var pages=$(this).find(".page")
+                var pages_flipped=$(this).find(".flipped")
+                pages.each(function(i){
+                    $(this).css("z-index",pages.length-i)
+                })
+                pages_flipped.each(function(i){
+                    $(this).css("z-index",i+1)
+                })
+            });    
+        }
+
+        reorder();
+    });
+</script>
+</body>
+</html>
+  
+
+</html>

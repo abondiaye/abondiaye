@@ -1,0 +1,744 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    }
+  
+  html, body {
+    
+    }
+  
+  ::-webkit-scrollbar {width:12px}
+  ::-webkit-scrollbar-thumb {background: #222;}
+  ::-webkit-scrollbar-track {background: transparent}
+  
+  ::selection {
+    background: #222;
+    color: white;
+    }
+  ::-moz-selection {
+    background: #222;
+    color: white;
+    }
+
+    h2 {
+      text-align: center;
+  }
+
+    @keyframes bounceIn {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  
+  40% {
+    transform: translateY(-20px);
+  }
+  
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.dynamic-title {
+  animation: bounceIn 1s;
+}
+
+  
+  body * {
+    transform-style: preserve-3d; /* am i doing this wrong? */
+    }
+  
+  body {
+    background: 
+      radial-gradient(
+        hsla(199,40%,90%,.7), 
+        hsla(0,0%,100%,0)
+        ) 
+        no-repeat, 
+      linear-gradient(
+        60deg, 
+        white, 
+        rgb(247, 249, 250), 
+        rgb(252, 246, 252)
+        );
+    color: #222;
+    font-family: 'Gabriela', serif;
+    perspective: 70em;/*in your face*/
+      overflow-y: hidden;
+    }
+  
+  h1, p {
+    margin: 5% 0;
+    text-align: center;
+    }
+  
+  .book {
+    height: 80%;
+    max-height: 600px;
+    min-height: 656px;
+    width: 1100px;
+    background-image: 
+      linear-gradient(
+        90deg,
+        hsl(0deg 0% 100%),
+         hsla(30,40%,20%,.9),
+        hsla(30,40%,50%,.4) 90%
+        ),
+      url('http://inspirationhut3.inspirationhut.netdna-cdn.com/wp-content/uploads/2012/11/Old-Paper-Texture-3.jpg');
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    margin: auto;
+    
+    border: 3px solid hsla(30,10%,20%,1);
+    border-radius: 15px;
+    box-shadow: 0 0 150px hsla(170,0%,0%,.4);
+    }
+    .book .page .content img {
+        width: 240px; /* Ajustez la largeur selon vos besoins */
+        height: 312px; /* Ajustez la hauteur selon vos besoins */
+        margin-top: 10px; /* Ajustez la marge supérieure selon vos besoins */
+        margin-left: 90px;
+        border: 16px solid rgba(0, 0, 0, .2); 
+        border-radius: 5px; /* Ajustez la marge gauche selon vos besoins */
+      }
+      
+  
+  .page {
+    height: 100%;
+    width: 50%;
+    line-height: 1.5;
+    border-right: 10px solid transparent;
+    position: absolute;
+    top: 0; right: 0;
+    transform-origin: 0 50%;
+    transition: .8s;
+    /*animation: unflip .3s linear;*/
+    }
+    [class*='side'] {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      background-color: hsl(30,40%,70%);
+      background-image: url('http://inspirationhut3.inspirationhut.netdna-cdn.com/wp-content/uploads/2012/11/Old-Paper-Texture-3.jpg');
+      background-size: 100% 100%;
+      backface-visibility: hidden;
+      overflow: auto;
+      padding: 5% 8%;
+      }
+    .side-1 {
+      z-index: 2;
+      box-shadow: inset 50px 0 50px rgba(0,0,0,.5);
+      transition: .5s;
+      }
+    .side-2 {
+      transform:
+        rotateY(180deg);
+      box-shadow: inset -50px 0 50px rgba(0,0,0,.5);
+      }
+    .flipped > .side-1 {
+      box-shadow: inset 300px 0 50px rgba(0,0,0,.8);   
+      transition: .6s;
+      }
+    .flipped > [class*='side'] {
+      pointer-events: auto;
+      }
+  .page:after {
+    width: 100px;
+    height: 50px;
+    background-color: #555;
+    position: absolute;
+    top: 0; bottom: 0; right: -100px;
+    margin: auto;
+    color: white;
+    text-shadow: 0 -1px 0 #222;
+    line-height: 50px;
+    text-align: center;
+    font-family: monospace;
+    content: 'next-page';
+    animation: hide .8s linear;
+    }
+    .page.flipped:after {
+      content: 'prev-page';
+      transform:
+        rotateY(180deg);
+      pointer-events: auto;
+      }
+    /* to hide on flip animation */
+    @keyframes hide {
+      0% {opacity: 0;}
+      85% {opacity: 0;}
+      100% {opacity: 1;}
+      }
+  .flipped {
+    transform:
+      rotateY(-180deg);
+    pointer-events: none;
+    /*animation: flip .3s linear;
+    animation-fill-mode: forwards;*/
+    }
+    
+  .no-anim,
+    .no-anim:after {
+    animation: none;/* disable animation when page loads */
+    }
+  @keyframes flip {
+    to {
+      transform:
+        rotateY(-180deg);    
+      }
+    }
+  @keyframes unflip {
+    from {
+      transform:
+        rotateY(-180deg);    
+      }
+    to {
+      transform:
+        rotateY(0deg);    
+      }
+    }
+
+   
+      
+     
+      
+      button {
+        background: none;
+        border: none;
+        color: #f4f7ff;
+        cursor: pointer;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        height: 40px;
+        left: 50%;
+        outline: none;
+        overflow: hidden;
+        padding: 0 10px;
+        position: fixed;
+        top: 216%;
+        transform: translate(-50%, -50%);
+        width: 190px;
+        -webkit-tap-highlight-color: transparent;
+        z-index: 1;
+      
+        &::before {
+          background: #1f2335;
+          border-radius: 50px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, .4) inset;
+          content: '';
+          display: block;
+          height: 100%;
+          margin: 0 auto;
+          position: relative;
+          transition: width .2s cubic-bezier(.39,1.86,.64,1) .3s;
+          width: 100%;
+        }
+      }
+      
+      button.ready {
+        .submitMessage svg {
+          opacity: 1;
+          top: 1px;
+          transition: top .4s ease 600ms, opacity .3s linear 600ms;
+        }
+      
+        .submitMessage .button-text span {
+          top: 0;
+          opacity: 1;
+          transition: all .2s ease calc(var(--dr) + 600ms);
+        }
+      }
+      
+      button.loading {
+        &::before {
+          transition: width .3s ease;
+          width: 80%;
+        }
+      
+        .loadingMessage {
+          opacity: 1;
+        }
+      
+    
+        
+      }
+      
+      button.complete {
+        .submitMessage svg {
+          top: -30px;
+          transition: none;
+        }
+      
+        .submitMessage .button-text span {
+          top: -8px;
+          transition: none;
+        }
+      
+        .loadingMessage {
+          top: 80px;
+        }
+      
+        .successMessage .button-text span {
+          left: 0;
+          opacity: 1;
+          transition: all .2s ease calc(var(--d) + 1000ms);
+        }
+      
+        .successMessage svg { 
+          stroke-dashoffset: 0;
+          transition: stroke-dashoffset .3s ease-in-out 1.4s;
+        }
+      }
+      
+      .button-text span {
+        opacity: 0;
+        position: relative;
+      }
+      
+      .message {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+      }
+      
+      .message svg {
+        display: inline-block;
+        fill: none;
+        margin-right: 5px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2;
+      }
+      
+      .submitMessage {
+        .button-text span {
+          top: 8px;
+          transition: all .2s ease var(--d);
+        }
+      
+        svg {
+          color: #5c86ff;
+          margin-left: -1px;
+          opacity: 0;
+          position: relative;
+          top: 30px;
+          transition: top .4s ease, opacity .3s linear;
+          width: 14px;
+        }
+      }
+
+      body{
+        display: flex;
+      justify-content: center;
+        align-items: center;
+      min-height: 100vh;
+      }
+      
+    .slider {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      border: 1px solid #ccc;
+      perspective: 100px;
+    }
+    
+    .item {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      background-color: rgb(255, 0, 85);
+      transition: all 0.6s ease; 
+    }
+    
+    .item[data-key="0"] {
+      background-color: pink;
+    }
+    
+    .item[data-key="1"] {
+      background-color: rgb(172, 235, 172);
+    }
+    
+    .item[data-key="2"] {
+      background-color: rgba(100, 100, 255, 1);
+    }
+        
+      
+      .loadingMessage {
+        opacity: 0;
+        transition: opacity .3s linear .3s, top .4s cubic-bezier(.22,0,.41,-0.57);
+      
+        svg {
+          fill: #5c86ff;
+          margin: 0;
+          width: 22px;
+        }
+      }
+      
+      .successMessage {
+        .button-text span {
+          left: 5px;
+          transition: all .2s ease var(--dr);
+        }
+        
+        svg {
+          color: #5cffa1;
+          stroke-dasharray: 20;
+          stroke-dashoffset: 20;
+          transition: stroke-dashoffset .3s ease-in-out;
+          width: 14px;
+        }
+      }
+      
+      .loadingCircle:nth-child(2) { animation-delay: .1s }
+      .loadingCircle:nth-child(3) { animation-delay: .2s }
+      
+      
+      
+        &__icon {
+          left: -10px;
+          position: absolute;
+          top: -12px;
+          width: 44px;
+        }
+      
+        &__name {
+          display: block;
+          font-size: 14px;
+          line-height: 14px;
+          margin: 5px 0 3px;
+        }
+      
+        &__last-name {
+          color: #55bada;
+        }
+        
+        .item {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(198, 149, 149); /* Couleur de fond rouge, à adapter selon vos besoins */
+            margin: 10px;
+            display: inline-block;
+          }
+          
+          .bg-cv {
+            position: fixed;
+            z-index: -1000;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+          }
+          
+          .wrapper {
+            display: flex;
+            justify-content: center;
+          }
+          
+          .rows {
+            padding: 16px;
+            box-sizing: border-box;
+            width: 100%;
+            min-height: 100vh;
+            display: grid;
+            grid-auto-flow: row;
+            grid-gap: 16px;
+            grid-template-columns: repeat(4, auto);
+            max-width: calc(250px * 4 + 16px * 5);
+          }
+          
+          .im-wrapper {
+            position: relative;
+          }
+          
+          .im-im {
+            position: absolute;
+            transition: opacity 1s;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            cursor: pointer;
+          }
+          
+          .canv {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 20;
+            pointer-events: none;
+          }
+
+          .bg-cv {
+            position: fixed;
+            z-index: -1000;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+          }
+          
+          .wrapper2 {
+            display: flex;
+            justify-content: center;
+          }
+          
+          .rows {
+            padding: 16px;
+            box-sizing: border-box;
+            width: 100%;
+            min-height: 100vh;
+            display: grid;
+            grid-auto-flow: row;
+            grid-gap: 16px;
+            grid-template-columns: repeat(4, auto);
+            max-width: calc(250px * 4 + 16px * 5);
+          }
+          
+          .im-wrapper2 {
+            position: relative;
+          }
+          
+          .im-im {
+            position: absolute;
+            transition: opacity 1s;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            cursor: pointer;
+          }
+          
+          .canv {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 20;
+            pointer-events: none;
+          }
+                   
+          body.custom-body {
+            /* Vos styles personnalisés ici */
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            /* Autres styles... */
+        }
+        
+        /* Ajoutez ces styles si vous souhaitez personnaliser des éléments spécifiques à l'intérieur de cette section */
+        body.custom-body h1 {
+            color: #333;
+            /* Autres styles pour les titres h1... */
+        }
+        
+        body.custom-body p {
+            font-size: 16px;
+            /* Autres styles pour les paragraphes... */
+        }
+        #competence {
+          text-align: center;
+      }
+      .comp div {
+        width: 0;
+        height: 10px;
+        background-color: #4caf50; /* Couleur de la barre */
+        transition: width 0.5s; /* Transition animée */
+    }
+      
+      .titre {
+          margin-bottom: 20px;
+      }
+      
+      .ul_comp {
+          list-style: none;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+      }
+      
+      .comp {
+          width: 30%;
+          margin-bottom: 15px;
+          text-align: left;
+          display: flex;
+          align-items: center;
+      }
+      
+      .niveau_3, .niveau_4, .niveau_5 {
+          width: 80px; /* Ajustez la largeur selon vos besoins */
+          height: 10px;
+          background-color: #3498db; /* Couleur du niveau */
+          margin-left: 10px;
+      }
+
+      #contact {
+        margin-top: 30px;
+        height: 0;
+        margin-right: 10px;
+    }
+    
+    .titre img {
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+    
+    hr {
+        border: 1px solid #ddd;
+        margin-top: 10px;
+    }
+    
+    .contact-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .form-container {
+        flex: 1;
+    }
+    
+    .form-container form {
+        max-width: 300px;
+    }
+    
+    .form-container input,
+    .form-container textarea {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+    
+    
+    .form-container input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+    
+    .address-container {
+        flex: 1;
+    }
+    
+    .ul_contact {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .ul_contact li {
+        margin-bottom: 10px;
+    }
+    
+    .iframe {
+        width: 100%;
+        height: 200px;
+        border: 0;
+    }
+    
+    /* ... (votre code CSS) */
+
+.container {
+  padding: 40px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Ajustez selon vos besoins */
+}
+
+.card-wrap {
+  margin: 10px;
+  transform: perspective(800px);
+  transform-style: preserve-3d;
+  cursor: pointer;
+  flex: 0 0 calc(50% - 20px); /* Utilisez calc pour déduire la marge */
+  max-width: calc(50% - 20px);
+  position: relative;
+  
+  &:nth-child(odd) {
+    margin-right: 5px; /* Ajoutez cette ligne pour un petit espace entre les cartes */
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    color: #fff;
+    transform: translateY(40%);
+    transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    
+    p {
+      opacity: 0;
+      transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+      background-blend-mode: overlay;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+  }
+  
+  &:hover {
+    .card-info {
+      transform: translateY(0);
+    }
+    
+    .card-info p {
+      opacity: 1;
+    }
+  }
+  
+  .card-bg {
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: none;
+  }
+  
+  .card {
+    position: relative;
+    flex: 1;
+    height: 320px;
+    background-color: #333;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
+    transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+
+  &:hover .card {
+    box-shadow: rgba(255, 255, 255, 0.2) 0 0 40px 5px, rgba(255, 255, 255, 1) 0 0 0 1px, rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset rgba(255, 255, 255, 1) 0 0 0 6px;
+  }
+}
