@@ -98,10 +98,10 @@
     box-shadow: 0 0 150px hsla(170,0%,0%,.4);
     }
     .book .page .content img {
-        width: 240px; /* Ajustez la largeur selon vos besoins */
+        width: 348px; /* Ajustez la largeur selon vos besoins */
         height: 312px; /* Ajustez la hauteur selon vos besoins */
         margin-top: 10px; /* Ajustez la marge supérieure selon vos besoins */
-        margin-left: 90px;
+        margin-left: 40px;
         border: 16px solid rgba(0, 0, 0, .2); 
         border-radius: 5px; /* Ajustez la marge gauche selon vos besoins */
       }
